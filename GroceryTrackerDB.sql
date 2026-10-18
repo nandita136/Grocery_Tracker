@@ -6,3 +6,11 @@
     MobileNumber VARCHAR(15),
     CreatedAt DATETIME DEFAULT GETDATE()
 );
+
+CREATE TABLE Meals (
+    MealID INT IDENTITY(1,1) PRIMARY KEY,
+    MealName VARCHAR(100) NOT NULL,
+    MealType VARCHAR(30) NOT NULL,
+    Category VARCHAR(50) NOT NULL,
+    BaseServing INT NOT NULL DEFAULT 2
+);
