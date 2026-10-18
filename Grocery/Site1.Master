@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery Tracker | Plan better, shop smarter</title>
     
-    <!-- ALL CSS LINKS HERE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -19,7 +18,12 @@
 <body>
     <form id="form1" runat="server">
         
-        <!-- HEADER/NAVBAR (No nested html/head/body tags!) -->
+        <!-- ContentPlaceHolder1 (for pages that need it) -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+        <!-- HEADER/NAVBAR -->
         <header class="site-header">
             <div class="container nav-wrap">
                 <a class="brand" href="Home.aspx">
@@ -40,6 +44,13 @@
         <!-- MAIN CONTENT AREA -->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
         </asp:ContentPlaceHolder>
+        <!-- MAIN CONTENT AREA -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- ADD THIS NEW PLACEHOLDER -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        </asp:ContentPlaceHolder>
 
         <section class="cta-section">
             <div class="container">
@@ -50,7 +61,6 @@
                 </div>
             </div>
         </section>
-
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
