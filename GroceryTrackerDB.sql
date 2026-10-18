@@ -64,3 +64,23 @@ CREATE TABLE GroceryItems (
     FOREIGN KEY (PlanID)
         REFERENCES WeeklyPlans(PlanID)
 );
+
+CREATE TABLE SpecialMealRequests (
+    RequestID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    RequestedMealName VARCHAR(100) NOT NULL,
+    Occasion VARCHAR(100) NOT NULL,
+    NumberOfMembers INT NOT NULL,
+    Requirements VARCHAR(500) NULL,
+    RequestDate DATETIME NOT NULL DEFAULT GETDATE(),
+    Status VARCHAR(30) NOT NULL DEFAULT 'Pending',
+
+    FOREIGN KEY (UserID)
+        REFERENCES Users(UserID),
+
+    CONSTRAINT CK_SpecialMealRequests_Members
+        CHECK (NumberOfMembers > 0),
+
+    CONSTRAINT CK_SpecialMealRequests_Status
+        CHECK (Status IN ('Pending', 'Approved', 'Rejected'))
+);
