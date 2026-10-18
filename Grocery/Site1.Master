@@ -66,7 +66,9 @@
 
                                 </div>
                             </div>
-                            <div class="hero-art" aria-label="Fresh grocery illustration"></div>
+                            <div class="hero-art">
+                                <img src="images/grocery.jpg" alt="Fresh grocery illustration" style="width: 100%; height: 100%; object-fit: cover; border-radius: 28px;">
+                            </div>
                         </div>
                     </section>
                     <section class="section">

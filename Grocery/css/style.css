@@ -138,12 +138,21 @@ button {
         transform: translateY(-1px);
     }
 
+
 .btn-secondary {
-    background: var(--light);
-    color: var(--dark);
+    background: #ffffff;
+    color: var(--green);
     border: 2px solid var(--green);
     text-decoration: none;
 }
+
+    .btn-secondary:hover {
+        background: #ffffff;
+        color: var(--green);
+        border-color: var(--dark);
+        transform: translateY(-1px);
+    }
+
 
 .btn-danger {
     background: #fee2e2;
@@ -158,8 +167,8 @@ button {
     background-color: #ffffff;
     color: var(--green);
     border: 2px solid var(--green);
-    padding: 11px 18px;
-    border-radius: 10px;
+    padding: 11px 24px; /* Slightly wider padding */
+    border-radius: 50px; /* ✅ This makes it a perfect pill shape */
     font-weight: 800;
     text-decoration: none;
     display: inline-flex;
@@ -168,11 +177,12 @@ button {
     transition: 0.2s;
 }
 
- .btn-login:hover {
+    .btn-login:hover {
         background: var(--green);
         color: #fff;
         transform: translateY(-1px);
-  }
+    }
+
 
 /* ========================================
    5. HOME PAGE - HERO SECTION
@@ -221,7 +231,7 @@ button {
 
 /* ========================================
    6. HERO ILLUSTRATION
-======================================== */
+======================================== 
 .hero-art {
     min-height: 330px;
     border-radius: 28px;
@@ -253,7 +263,7 @@ button {
         border-radius: 20px;
         font-weight: 900;
     }
-
+*/
 
 /* ========================================
    7. GENERAL CONTENT SECTIONS
