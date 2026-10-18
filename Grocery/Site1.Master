@@ -26,7 +26,27 @@
                 <body>
                     <header class="site-header">
                         <div class="container nav-wrap">
-                            <a class="brand" href="Home.aspx"><i class="fa-solid fa-leaf"></i>Grocery Tracker</a><nav class="nav-links"><a class="active" href="Home.aspx">Home</a><a href="about.aspx">About</a><a href="contact.aspx">Contact</a><a href="login.aspx">Login</a><a class="btn btn-primary" href="register.aspx">Register</a></nav>
+                            <a class="brand" href="Home.aspx">
+                                <i class="fa-solid fa-leaf"></i>
+                                Grocery Tracker
+                            </a>
+
+                           
+                            <nav class="nav-links">
+                                <a class="active" href="Home.aspx">Home</a>
+                                <a href="about.aspx">About</a>
+                                <a href="contact.aspx">Contact</a>
+                            </nav>
+
+                            
+                           
+                            
+                            <div class="nav-actions">
+                                <a href="login.aspx" class="btn btn-login">Login</a>
+                                <a href="register.aspx" class="btn btn-primary">Register</a>
+                            </div>
+
+
                         </div>
                     </header>
             </asp:ContentPlaceHolder>
