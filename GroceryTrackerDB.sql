@@ -36,3 +36,14 @@ CREATE TABLE WeeklyPlans (
     CreatedAt DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
+
+
+CREATE TABLE PlanMeals (
+    PlanMealID INT IDENTITY(1,1) PRIMARY KEY,
+    PlanID INT NOT NULL,
+    MealID INT NOT NULL,
+    DayOfWeek VARCHAR(15) NOT NULL,
+    MealType VARCHAR(30) NOT NULL,
+    FOREIGN KEY (PlanID) REFERENCES WeeklyPlans(PlanID),
+    FOREIGN KEY (MealID) REFERENCES Meals(MealID)
+);
