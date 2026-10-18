@@ -14,3 +14,16 @@ CREATE TABLE Meals (
     Category VARCHAR(50) NOT NULL,
     BaseServing INT NOT NULL DEFAULT 2
 );
+
+CREATE TABLE MealIngredients (
+    MealIngredientID INT IDENTITY(1,1) PRIMARY KEY,
+    MealID INT NOT NULL,
+    IngredientName VARCHAR(100) NOT NULL,
+    Quantity DECIMAL(10,2) NOT NULL,
+    Unit VARCHAR(20) NOT NULL,
+    IngredientCategory VARCHAR(50) NOT NULL,
+
+    FOREIGN KEY (MealID)
+        REFERENCES Meals(MealID)
+        ON DELETE CASCADE
+);
