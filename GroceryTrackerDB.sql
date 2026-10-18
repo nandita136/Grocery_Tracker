@@ -48,16 +48,19 @@ CREATE TABLE PlanMeals (
     FOREIGN KEY (MealID) REFERENCES Meals(MealID)
 );
 
+
+
 CREATE TABLE GroceryItems (
     GroceryItemID INT IDENTITY(1,1) PRIMARY KEY,
     UserID INT NOT NULL,
-    IngredientID INT NULL,
     PlanID INT NULL,
     ItemName VARCHAR(100) NOT NULL,
-    Quantity DECIMAL(10,2),
-    Unit VARCHAR(30),
-    IsPurchased BIT DEFAULT 0,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (IngredientID) REFERENCES Ingredients(IngredientID),
-    FOREIGN KEY (PlanID) REFERENCES WeeklyPlans(PlanID)
+    Quantity DECIMAL(10,2) NULL,
+    Unit VARCHAR(30) NULL,
+
+    FOREIGN KEY (UserID)
+        REFERENCES Users(UserID),
+
+    FOREIGN KEY (PlanID)
+        REFERENCES WeeklyPlans(PlanID)
 );
