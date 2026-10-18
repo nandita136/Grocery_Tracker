@@ -27,3 +27,12 @@ CREATE TABLE MealIngredients (
         REFERENCES Meals(MealID)
         ON DELETE CASCADE
 );
+
+CREATE TABLE WeeklyPlans (
+    PlanID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    WeekStartDate DATE NOT NULL,
+    NumberOfMembers INT DEFAULT 1,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
