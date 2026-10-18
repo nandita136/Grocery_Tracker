@@ -60,7 +60,11 @@
                                     Track Groceries.<br>
                                     Save Time.</h1>
                                 <p>Plan your weekly meals, automatically generate grocery suggestions, manage your shopping list, and organize special meals in one simple application.</p>
-                                <div class="actions"><a class="btn btn-primary" href="register.aspx">Get Started Free <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-secondary" href="login.aspx">Login</a></div>
+                                <div class="actions">
+                                    <a class="btn btn-primary" href="register.aspx">Get Started Free <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a class="btn btn-secondary" href="login.aspx">Login</a>
+
+                                </div>
                             </div>
                             <div class="hero-art" aria-label="Fresh grocery illustration"></div>
                         </div>
