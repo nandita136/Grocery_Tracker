@@ -84,3 +84,12 @@ CREATE TABLE SpecialMealRequests (
     CONSTRAINT CK_SpecialMealRequests_Status
         CHECK (Status IN ('Pending', 'Approved', 'Rejected'))
 );
+
+CREATE TABLE ContactMessages (
+    MessageID INT IDENTITY(1,1) PRIMARY KEY,
+    FullName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Subject VARCHAR(200),
+    MessageText VARCHAR(1000) NOT NULL,
+    SubmittedAt DATETIME DEFAULT GETDATE()
+);
