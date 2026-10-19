@@ -155,12 +155,25 @@
     <Compile Include="admin-users.aspx.designer.cs">
       <DependentUpon>admin-users.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.master.cs.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.master.cs.designer.cs">
+      <DependentUpon>Admin.master.cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -244,6 +257,7 @@
   <ItemGroup>
     <Content Include="assets\.gitkeep" />
     <Content Include="images\.gitkeep" />
+    <Content Include="Admin.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="Dashboard.Master" />

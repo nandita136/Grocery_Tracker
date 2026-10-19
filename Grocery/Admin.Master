@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Grocery.Admin" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Grocery Tracker</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div class="app-shell admin-shell">
+            <!-- ADMIN SIDEBAR -->
+            <aside class="sidebar">
+                <a class="brand" href="admin-dashboard.aspx">
+                    <i class="fa-solid fa-shield-halved"></i> Admin Panel
+                </a>
+                <nav class="side-nav">
+                    <a href="admin-dashboard.aspx" class="nav-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="admin-users.aspx" class="nav-item"><i class="fa-solid fa-users"></i> Users</a>
+                    <a href="admin-meals.aspx" class="nav-item"><i class="fa-solid fa-utensils"></i> Meals</a>
+                    <a href="admin-grocery.aspx" class="nav-item"><i class="fa-solid fa-basket-shopping"></i> Grocery Items</a>
+                    <a href="admin-special-meals.aspx" class="nav-item"><i class="fa-solid fa-cake-candles"></i> Special Requests</a>
+                </nav>
+                <div class="sidebar-footer">
+                    <a href="Home.aspx" class="nav-item logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT AREA -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="toast-wrap"></div>
+        <script src="js/storage.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/auth.js"></script>
+    </form>
+</body>
+</html>
