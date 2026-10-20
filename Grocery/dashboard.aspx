@@ -103,20 +103,33 @@
                     <div class="profile-chip"><span data-user-name>User</span><span class="avatar"><i class="fa-solid fa-user"></i></span></div>
                 </header>
                 <section class="content">
-                    <div class="welcome">
-                        <h2 data-welcome>Welcome back!</h2>
-                        <p class="muted" id="plan-date">Your weekly plan at a glance.</p>
-                    </div>
-                    <div class="stat-grid">
-                        <div class="card stat-card">
-                            <div><span class="muted">Planned Meals</span><strong id="planned-count">0</strong></div>
-                            <i class="fa-solid fa-calendar-check"></i></div>
-                        <div class="card stat-card">
-                            <div><span class="muted">Grocery Items</span><strong id="grocery-count">0</strong></div>
-                            <i class="fa-solid fa-basket-shopping"></i></div>
-                        <div class="card stat-card">
-                            <div><span class="muted">Special Requests</span><strong id="request-count">0</strong></div>
-                            <i class="fa-solid fa-cake-candles"></i></div>
+                        <div class="welcome">
+                            <div class="welcome-greeting">Welcome back,</div>
+                            <h2 data-welcome>Priyesha Chauhan</h2>
+                            <p id="plan-date">You have 3 meals planned for today.</p>
+                        </div>
+                        <div class="stats-container">
+                        <!-- Card 1: Meals This Week -->
+                        <div class="stat-card-modern">
+                            <div class="stat-icon-wrapper bg-green-light">
+                                <i class="fa-regular fa-calendar text-green"></i>
+                            </div>
+                            <div class="stat-info">
+                                <strong id="planned-count">21</strong>
+                                <span>Meals This Week</span>
+                            </div>
+                        </div>
+    
+                        <!-- Card 2: Grocery Items -->
+                        <div class="stat-card-modern">
+                            <div class="stat-icon-wrapper bg-blue-light">
+                                <i class="fa-solid fa-cart-shopping text-blue"></i>
+                            </div>
+                            <div class="stat-info">
+                                <strong id="grocery-count">34</strong>
+                                <span>Grocery Items</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="inline">
                         <h2>Weekly meal summary</h2>

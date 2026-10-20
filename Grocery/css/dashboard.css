@@ -116,47 +116,117 @@
 
 /* Welcome Card */
 .welcome {
-    background: linear-gradient(110deg, #eaf7ee, #fff);
-    border: 1px solid var(--border);
+    background: #10b981; /* Solid green background */
     border-radius: 16px;
     margin-bottom: 24px;
-    padding: 24px;
+    padding: 32px;
+    color: white;
 }
+ .welcome .welcome-greeting {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        margin-bottom: 6px;
+        display: block;
+ }
 
     .welcome h2 {
-        color: var(--dark);
+        color: white;
         font-family: Quicksand, sans-serif;
-        margin: 0 0 4px;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 0 8px 0;
+    }
+    .welcome p {
+        color: white;
+        opacity: 0.9;
+        margin: 0;
+        font-size: 0.95rem;
     }
 
-/* Statistics Grid */
-.stat-grid {
+/* =========================================
+   MODERN STATS CARDS (New Design)
+   ========================================= */
+
+.stats-container {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
-.stat-card {
-    align-items: center;
+.stat-card-modern {
+    background: white;
+    border: 1px solid var(--border, #dcebe1);
+    border-radius: 16px;
+    padding: 24px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-    .stat-card strong {
-        color: var(--dark);
-        display: block;
+    .stat-card-modern:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(31, 93, 58, 0.08);
+    }
+
+.stat-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+    .stat-icon-wrapper i {
+        font-size: 1.4rem;
+    }
+
+.bg-green-light {
+    background: #ecfdf5;
+}
+
+.text-green {
+    color: #10b981;
+}
+
+.bg-blue-light {
+    background: #eff6ff;
+}
+
+.text-blue {
+    color: #3b82f6;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+    .stat-info strong {
         font-family: Quicksand, sans-serif;
         font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--dark, #1f5d3a);
+        line-height: 1.1;
+        display: block;
     }
 
-    .stat-card i {
-        background: var(--light);
-        border-radius: 12px;
-        color: var(--green);
-        font-size: 1.5rem;
-        padding: 13px;
+    .stat-info span {
+        font-size: 0.9rem;
+        color: var(--muted, #6b7280);
+        font-weight: 600;
     }
+
+/* Responsive for stats */
+@media (max-width: 600px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Quick Actions Grid */
 .quick-grid {
