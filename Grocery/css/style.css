@@ -100,11 +100,32 @@ button {
     color: var(--muted);
     font-weight: 700;
 }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-        color: var(--green);
+    .nav-links a {
+        position: relative;
+        padding-bottom: 4px;
+        transition: color 0.3s ease;
     }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--green);
+        }
+
+            .nav-links a:hover::after,
+            .nav-links a.active::after {
+                width: 100%;
+            }
 
 .nav-actions {
     display: flex;
@@ -205,7 +226,29 @@ button {
     text-transform: uppercase;
     letter-spacing: 1.4px;
     font-size: .78rem;
+    display: flex; /* Added to align icon and text */
+    align-items: center; /* Added to align icon and text */
+    gap: 8px; /* Added space between icon and text */
 }
+.eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border: 1px solid var(--green);
+    border-radius: 50px;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    background: transparent;
+    margin-bottom: 16px;
+}
+
+    .eyebrow i {
+        font-size: 0.9rem; /* Added to size the leaf icon */
+    }
 
 .hero h1 {
     font-family: Quicksand, sans-serif;
@@ -214,6 +257,11 @@ button {
     margin: 14px 0;
     color: var(--dark);
 }
+    /* Add this right below the .hero h1 { ... } block */
+    .hero h1 .highlight {
+        color: var(--green);
+        font-weight: 900;
+    }
 
 .hero p {
     font-size: 1.1rem;
@@ -275,22 +323,29 @@ button {
     .section-head p {
         color: var(--muted);
     }
-
+    .section-head h1 {
+        font-family: Quicksand, sans-serif;
+        font-weight: 900;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        color: var(--dark);
+        margin: 8px 0;
+        line-height: 1.1;
+    }
 
 /* ========================================
    8. FEATURE CARDS (Updated for 3-column layout)
 ======================================== */
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Changed from 5 to 3 columns */
-    gap: 24px; /* Increased gap for a cleaner look */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .feature-card {
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     box-shadow: var(--shadow);
     transition: transform 0.2s ease;
 }
@@ -299,21 +354,30 @@ button {
         transform: translateY(-5px);
     }
 
+    /* UPDATED ICON STYLES */
     .feature-card i {
-        font-size: 1.8rem; /* Slightly larger icons */
+        font-size: 1.8rem;
         color: var(--green);
         background: var(--light);
         padding: 15px;
         border-radius: 12px;
         display: inline-block;
         margin-bottom: 15px;
+        transition: all 0.3s ease; /* Added for smooth animation */
+    }
+
+    /* NEW: Hover effect specifically for the icon */
+    .feature-card:hover i {
+        background: var(--green); /* Background turns green */
+        color: #fff; /* Icon turns white */
+        transform: scale(1.15); /* Icon grows slightly */
     }
 
     .feature-card h3 {
         font-size: 1.1rem;
         font-weight: 800;
         margin: 0 0 10px 0;
-        color: var(--dark);
+        color: black;
     }
 
     .feature-card p {
@@ -322,7 +386,6 @@ button {
         line-height: 1.6;
         margin: 0;
     }
-
 
 /* ========================================
    9. ABOUT SECTION
@@ -653,5 +716,191 @@ button {
     .footer-grid {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+/* ========================================
+   18. CONTACT PAGE DESIGN
+======================================== */
+.contact-hero {
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 40px;
+    align-items: start;
+    padding: 20px 0 80px;
+}
+
+/* Contact Info (Left Side) */
+.contact-info h3 {
+    font-family: Quicksand, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin: 0 0 24px 0;
+}
+
+.contact-info-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(31, 93, 58, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .contact-info-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(31, 93, 58, 0.12);
+    }
+
+.contact-info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--light);
+    color: var(--green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+    .contact-info-text .label {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    .contact-info-text .value {
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 700;
+    }
+
+/* Contact Form (Right Side) */
+.contact-form-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 4px 20px rgba(31, 93, 58, 0.08);
+}
+
+    .contact-form-card h3 {
+        font-family: Quicksand, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0 0 24px 0;
+    }
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form-card .form-group {
+    margin-bottom: 20px;
+}
+
+    .contact-form-card .form-group label {
+        display: block;
+        font-weight: 800;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        color: var(--dark);
+    }
+
+/* Inputs with Icons */
+.contact-input-wrap {
+    position: relative;
+}
+
+    .contact-input-wrap i {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--muted);
+        font-size: 0.95rem;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .contact-input-wrap input,
+    .contact-input-wrap textarea {
+        width: 100%;
+        padding: 12px 14px 12px 42px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.95rem;
+        outline: none;
+        background: #fafbfc;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        font-family: inherit;
+        box-sizing: border-box;
+    }
+
+    .contact-input-wrap textarea {
+        min-height: 130px;
+        resize: vertical;
+        padding-top: 14px;
+    }
+
+        .contact-input-wrap input:focus,
+        .contact-input-wrap textarea:focus {
+            border-color: var(--green);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(59, 143, 90, 0.1);
+        }
+
+/* Send Button */
+.btn-send {
+    width: 100%;
+    padding: 14px 24px;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+}
+
+    .btn-send:hover {
+        background: var(--dark);
+        transform: translateY(-1px);
+    }
+
+/* Contact Page Responsive */
+@media (max-width: 800px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-row {
+        grid-template-columns: 1fr;
     }
 }

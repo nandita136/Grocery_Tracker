@@ -8,7 +8,7 @@
         <div class="container">
             <!-- Page Header -->
             <div class="section-head">
-                <div class="eyebrow">About</div>
+                <div class="eyebrow-pill">About</div>
                 <h1>Grocery Tracker & Helper</h1>
             </div>
 
@@ -62,19 +62,7 @@
                 </article>
             </div>
 
-            <!-- Bottom About Section -->
-            <section class="section about-band">
-                <div class="container hero-grid">
-                    <div>
-                        <h2>Good food starts with a good plan.</h2>
-                        <p class="muted">Grocery Tracker is a practical meal planning companion for busy households. It keeps your recipes, shopping list and special occasions connected.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fa-solid fa-seedling" style="color: var(--green)"></i>Built for everyday decisions</h3>
-                        <p class="muted">Choose meals, adjust servings and let the quantities do the arithmetic. Less mental load, fewer forgotten ingredients.</p>
-                    </div>
-                </div>
-            </section>
+           
         </div>
     </main>
 </asp:Content>

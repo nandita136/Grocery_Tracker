@@ -8,8 +8,14 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow">Smart Meal Planning</div>
-                    <h1>Plan Meals.<br>Track Groceries.<br>Save Time.</h1>
+                    <div class="eyebrow">
+                        <i class="fa-solid fa-leaf"></i> Smart Meal Planning
+                    </div>
+                    <h1>
+                        Plan Meals.<br>
+                        <span class="highlight">Track Groceries.</span><br>
+                        Save Time.
+                    </h1>
                     <p>Your all-in-one weekly meal planner that auto-generates grocery lists, helps you manage pantry items, and lets you order directly through Blinkit.</p>
                     <div class="actions">
                         <a class="btn btn-primary" href="register.aspx">Get Started <i class="fa-solid fa-arrow-right"></i></a>
@@ -17,9 +23,7 @@
                     </div>
                 </div>
                 
-                <!-- UPDATED IMAGE SECTION -->
                 <div class="hero-art">
-                
                     <img src="images/Grocery.jpg" alt="Fresh grocery illustration" style="width: 100%; height: 100%; object-fit: cover; border-radius: 28px;">
                 </div>
                 
