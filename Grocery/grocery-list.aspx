@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="grocery-list.aspx.cs" Inherits="Grocery.grocery_list" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard.Master" AutoEventWireup="true" CodeBehind="grocery-list.aspx.cs" Inherits="Grocery.grocery_list" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -10,11 +10,7 @@
         #grocery-body .btn-danger { background: #fee2e2 !important; color: var(--red) !important; border: 1px solid #fecaca !important; opacity: 1; }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <%--<main>
     <section class="hero">
         <div class="container hero-grid">

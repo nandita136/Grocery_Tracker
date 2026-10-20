@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="special-meals.aspx.cs" Inherits="Grocery.special_meals" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard.Master" AutoEventWireup="true" CodeBehind="special-meals.aspx.cs" Inherits="Grocery.special_meals" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -6,11 +6,7 @@
         #btnRequestMeal:hover { background: var(--dark) !important; color: #fff !important; border-color: var(--dark) !important; }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <%--<main>
     <section class="hero">
         <div class="container hero-grid">
