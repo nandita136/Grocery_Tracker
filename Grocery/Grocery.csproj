@@ -80,6 +80,7 @@
     <Content Include="css\dashboard.css" />
     <Content Include="css\style.css" />
     <Content Include="dashboard.aspx" />
+    <Content Include="forgot-password.aspx" />
     <Content Include="grocery-list.aspx" />
     <Content Include="grocery-suggestions.aspx" />
     <Content Include="Home.aspx" />
@@ -182,6 +183,13 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+    </Compile>
     <Compile Include="grocery-list.aspx.cs">
       <DependentUpon>grocery-list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,6 +247,13 @@
     <Compile Include="Dashboard.Master.designer.cs">
       <DependentUpon>Dashboard.Master</DependentUpon>
     </Compile>
+    <Compile Include="Auth.Master.cs">
+      <DependentUpon>Auth.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth.Master.designer.cs">
+      <DependentUpon>Auth.Master</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,6 +276,7 @@
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="Dashboard.Master" />
+    <Content Include="Auth.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,1 +1,84 @@
-.auth-shell{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#fff}.auth-visual{background:linear-gradient(145deg,#1f5d3a,#3b8f5a);color:#fff;padding:8vw;display:flex;flex-direction:column;justify-content:center}.auth-visual h2{font-family:Quicksand,sans-serif;font-size:3rem;line-height:1.05;margin:14px 0}.auth-visual p{color:#d5efdd;max-width:420px}.auth-visual .brand{color:#fff}.auth-panel{width:100px;display:flex;justify-content:center;align-items:center;padding:30px;place-items:center;padding:30px;}.auth-panel .form-card{box-shadow:none;border:0}@media(max-width:750px){.auth-shell{grid-template-columns:1fr}.auth-visual{display:none}}
+/* ========================================
+   AUTHENTICATION SHELL & VISUALS
+======================================== */
+.auth-shell {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.auth-visual {
+    background: linear-gradient(145deg, #1f5d3a, #3b8f5a);
+    color: #fff;
+    padding: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .auth-visual h2 {
+        font-family: Quicksand, sans-serif;
+        font-size: 3rem;
+        line-height: 1.05;
+        margin: 14px 0;
+    }
+
+    .auth-visual p {
+        color: #d5efdd;
+        max-width: 420px;
+    }
+
+    .auth-visual .brand {
+        color: #fff;
+    }
+
+.auth-panel {
+    width: 100%; /* Fixed from 100px to 100% so the form isn't squished */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    place-items: center;
+}
+
+    .auth-panel .form-card {
+        box-shadow: none;
+        border: 0;
+    }
+
+/* ========================================
+   FORM MESSAGES (Added for Forgot Password)
+======================================== */
+.form-error,
+.form-success {
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: .9rem;
+    margin: 12px 0;
+    display: none;
+}
+
+.form-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.form-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 750px) {
+    .auth-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-visual {
+        display: none;
+    }
+}

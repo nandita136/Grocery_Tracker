@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Grocery.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Auth.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Grocery.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/auth.css">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <%--<main>
     <section class="hero">
         <div class="container hero-grid">
@@ -105,12 +105,13 @@
                 <div class="inline small">
 
 
-                    <button
-                        type="button"
-                        class="btn btn-ghost"
-                        onclick="openReset()">
-                        Forgot Password ?
-                    </button>
+                    <a href="forgot-password.aspx" class="btn btn-ghost" style="background: transparent;
+                    color: var(--green);
+                    border: 0;
+                    cursor: pointer;
+                    padding: 0;
+                    font-weight: 800;
+                    text-decoration: none;">Forgot Password ?</a>
                 </div>
 
                 <asp:Button ID="btnSignIn"
@@ -155,20 +156,12 @@
     <script src="js/storage.js"></script>
     <script src="js/common.js"></script>
 
-    <script>
-        function openReset() {
-            alert("Forgot Password functionality will be added later.");
-        }
-    </script>
+   
 
 </asp:Content>
 
 
-<asp:Content
-    ID="Content3"
-    ContentPlaceHolderID="ContentPlaceHolder1"
-    runat="server">
-</asp:Content>
+
 
 
 

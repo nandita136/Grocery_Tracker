@@ -19,27 +19,8 @@
 <body>
     <form id="form1" runat="server">
         
-        <div class="app-shell admin-shell">
-            <!-- ADMIN SIDEBAR -->
-            <aside class="sidebar">
-                <a class="brand" href="admin-dashboard.aspx">
-                    <i class="fa-solid fa-shield-halved"></i> Admin Panel
-                </a>
-                <nav class="side-nav">
-                    <a href="admin-dashboard.aspx" class="nav-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-                    <a href="admin-users.aspx" class="nav-item"><i class="fa-solid fa-users"></i> Users</a>
-                    <a href="admin-meals.aspx" class="nav-item"><i class="fa-solid fa-utensils"></i> Meals</a>
-                    <a href="admin-grocery.aspx" class="nav-item"><i class="fa-solid fa-basket-shopping"></i> Grocery Items</a>
-                    <a href="admin-special-meals.aspx" class="nav-item"><i class="fa-solid fa-cake-candles"></i> Special Requests</a>
-                </nav>
-                <div class="sidebar-footer">
-                    <a href="Home.aspx" class="nav-item logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-                </div>
-            </aside>
-
-            <!-- MAIN CONTENT AREA -->
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
-        </div>
+        <!-- MAIN CONTENT AREA ONLY (Sidebar Removed) -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 
         <div class="toast-wrap"></div>
         <script src="js/storage.js"></script>
