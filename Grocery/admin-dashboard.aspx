@@ -102,8 +102,48 @@
                     <h1>Admin Dashboard</h1>
                     <div class="profile-chip">Administrator <span class="avatar"><i class="fa-solid fa-shield-halved"></i></span></div>
                 </header>
-                <section class="content">
-                    <div id="admin-kpis" class="admin-kpi"></div>
+                                <section class="content">
+                    <!-- Modern KPI Cards -->
+                    <div class="admin-kpi">
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-blue-light">
+                                <i class="fa-regular fa-user text-blue"></i>
+                            </div>
+                            <div class="kpi-info">
+                                <strong id="total-users">0</strong>
+                                <span>Total Users</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-green-light">
+                                <i class="fa-solid fa-utensils text-green"></i>
+                            </div>
+                            <div class="kpi-info">
+                                <strong id="total-meals">0</strong>
+                                <span>Total Meals</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-orange-light">
+                                <i class="fa-solid fa-cart-shopping text-orange"></i>
+                            </div>
+                            <div class="kpi-info">
+                                <strong id="total-grocery">0</strong>
+                                <span>Grocery Items</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-purple-light">
+                                <i class="fa-regular fa-clipboard text-purple"></i>
+                            </div>
+                            <div class="kpi-info">
+                                <strong id="pending-requests">0</strong>
+                                <span>Pending Requests</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Requests and Users Tables (Keep this!) -->
                     <div class="split-grid">
                         <div class="card">
                             <h2>Recent requests</h2>

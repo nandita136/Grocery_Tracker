@@ -103,6 +103,9 @@
                     <div class="profile-chip">Administrator <span class="avatar"><i class="fa-solid fa-shield-halved"></i></span></div>
                 </header>
                 <section class="content">
+                     <div class="page-header">
+                        <h1>All registered users</h1>
+                    </div>
                     <div class="toolbar">
                         <asp:TextBox ID="user_search" runat="server" placeholder="Search name or email" ClientIDMode="Static"></asp:TextBox>
                     </div>
@@ -113,7 +116,8 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Account Information</th>
+                                    <th>Total Plans</th>
+                                    <th>Joined</th>
                                 </tr>
                             </thead>
                             <tbody id="users-body"></tbody>
