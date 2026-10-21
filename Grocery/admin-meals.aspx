@@ -102,6 +102,7 @@
                     <div class="profile-chip">Administrator <span class="avatar"><i class="fa-solid fa-shield-halved"></i></span></div>
                 </header>
                 <section class="content">
+                
                     <div class="inline">
                         <div class="toolbar">
                             <asp:TextBox ID="meal_search" runat="server" placeholder="Search meals" ClientIDMode="Static"></asp:TextBox>

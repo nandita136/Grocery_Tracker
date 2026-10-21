@@ -103,27 +103,16 @@
                     <div class="profile-chip">Administrator <span class="avatar"><i class="fa-solid fa-shield-halved"></i></span></div>
                 </header>
                 <section class="content">
-                    <div class="toolbar">
-                        <select id="request-filter">
+                    <div class="toolbar" style="margin-bottom: 24px;">
+                        <select id="request-filter" style="padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; font-weight: 600; color: var(--dark);">
                             <option value="">All statuses</option>
                             <option>Pending</option>
                             <option>Accepted</option>
                             <option>Rejected</option>
-                        </select></div>
-                    <div class="card table-wrap">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Occasion</th>
-                                    <th>People</th>
-                                    <th>Meal Request</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="admin-request-body"></tbody>
-                        </table>
+                        </select>
+                    </div>
+                    <div id="admin-request-cards" class="admin-requests-grid">
+                        <!-- Request cards will be injected here by JavaScript -->
                     </div>
                 </section>
             </main>

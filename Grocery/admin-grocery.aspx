@@ -101,17 +101,15 @@
                     <div class="profile-chip">Administrator <span class="avatar"><i class="fa-solid fa-shield-halved"></i></span></div>
                 </header>
                 <section class="content">
-                    <div class="toolbar">
-                        <input id="admin-grocery-search" placeholder="Search dish or meal"></div>
-                    <div class="card table-wrap">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Dish / Meal</th>
-                                </tr>
-                            </thead>
-                            <tbody id="admin-grocery-body"></tbody>
-                        </table>
+                    <!-- Search Bar -->
+                    <div class="toolbar" style="margin-bottom: 24px;">
+                        <input id="admin-grocery-search" placeholder="Search by item, user, or category..." 
+                               style="width: 100%; max-width: 400px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 12px; font-size: 0.95rem; outline: none;">
+                    </div>
+
+                    <!-- Main Container for Grouped Lists -->
+                    <div id="admin-grocery-body" style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Content will be injected here by JS -->
                     </div>
                 </section>
             </main>
