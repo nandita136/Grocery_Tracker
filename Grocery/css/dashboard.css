@@ -860,3 +860,155 @@
         text-align: center;
     }
 }
+/* ========================================
+   MODERN SPECIAL MEALS DESIGN
+======================================== */
+
+/* People Selector - Modern Pills */
+#people, #request_people {
+    display: none; /* Hide default dropdown */
+}
+
+/* Create modern button group */
+.people-selector-modern {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin-bottom: 12px;
+    justify-content: flex-start;
+}
+
+.people-pill {
+    padding: 10px 16px;
+    border: 2px solid var(--border);
+    background: #fff;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    text-align: center;
+    min-width: 45px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+   
+    .people-pill:hover {
+        border-color: var(--green);
+        color: var(--green);
+    }
+
+    .people-pill.active {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+    }
+
+    .people-pill.custom {
+        min-width: 70px;
+    }
+
+.people-selected-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+    .people-selected-text strong {
+        color: var(--green);
+        font-weight: 700;
+    }
+
+/* Custom Input Field */
+.custom-people-field {
+    display: none;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 200px;
+}
+
+    .custom-people-field input {
+        width: 100%;
+        padding: 10px 16px;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+
+        .custom-people-field input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(59, 143, 90, 0.1);
+        }
+/* Meal Selection - Modern 2-Column Cards */
+#meal-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns like reference */
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.meal-option-wrapper {
+    background: #fff;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+}
+
+    .meal-option-wrapper:hover {
+        border-color: var(--green);
+        background: #f9fbf9;
+    }
+
+.meal-option-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+    .meal-option-card input[type="checkbox"],
+    .meal-option-card input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--border);
+        border-radius: 50%;
+        cursor: pointer;
+        accent-color: var(--green);
+        flex-shrink: 0;
+    }
+
+        .meal-option-card input[type="checkbox"]:checked,
+        .meal-option-card input[type="radio"]:checked {
+            accent-color: var(--green);
+            border-color: var(--green);
+        }
+
+    .meal-option-card i {
+        color: var(--green);
+        font-size: 1rem;
+        margin-right: 4px;
+    }
+
+.meal-option-text {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.meal-option-wrapper:hover .meal-option-text {
+    color: var(--green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #meal-options {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+

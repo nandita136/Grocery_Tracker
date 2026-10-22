@@ -198,6 +198,83 @@
         <script src="js/grocery-suggestions.js"></script>
         <script src="js/special-meals.js"></script>
         <script>protectUserPage(); setupAppShell(false, 'Special Meals'); initSpecialMeals();</script>
+
+        <script>
+            // Initialize People Selector Pills
+            document.addEventListener('DOMContentLoaded', function () {
+                const peopleDropdown = document.getElementById('people');
+                if (!peopleDropdown) return;
+
+                // Create modern pill buttons
+                const pillContainer = document.createElement('div');
+                pillContainer.className = 'people-selector-modern';
+
+                const values = [2, 4, 6, 8, 10, 15, 20];
+                values.forEach(value => {
+                    const pill = document.createElement('div');
+                    pill.className = 'people-pill' + (value === 2 ? ' active' : '');
+                    pill.textContent = value;
+                    pill.onclick = () => selectPeoplePill(value, pill);
+                    pillContainer.appendChild(pill);
+                });
+
+                // Custom button
+                const customPill = document.createElement('div');
+                customPill.className = 'people-pill custom';
+                customPill.textContent = 'Custom';
+                customPill.onclick = () => selectPeoplePill('custom', customPill);
+                pillContainer.appendChild(customPill);
+
+                // Selected text
+                const selectedText = document.createElement('div');
+                selectedText.className = 'people-selected-text';
+                selectedText.innerHTML = 'Selected: <strong>2 people</strong>';
+
+                // Custom input field
+                const customField = document.createElement('div');
+                customField.className = 'custom-people-field';
+                customField.innerHTML = '<input type="number" placeholder="Enter number of people" min="1">';
+
+                // Insert after dropdown
+                peopleDropdown.parentNode.insertBefore(pillContainer, peopleDropdown.nextSibling);
+                pillContainer.parentNode.insertBefore(selectedText, pillContainer.nextSibling);
+                pillContainer.parentNode.insertBefore(customField, selectedText.nextSibling);
+
+                // Hide original dropdown
+                peopleDropdown.style.display = 'none';
+
+                // Handle custom input
+                const customInput = customField.querySelector('input');
+                customInput.oninput = function () {
+                    if (this.value) {
+                        selectedText.innerHTML = 'Selected: <strong>' + this.value + ' people</strong>';
+                        peopleDropdown.value = 'custom';
+                    }
+                };
+            });
+
+            function selectPeoplePill(value, pillElement) {
+                // Remove active from all pills
+                document.querySelectorAll('.people-pill').forEach(p => p.classList.remove('active'));
+
+                // Add active to clicked pill
+                pillElement.classList.add('active');
+
+                const dropdown = document.getElementById('people');
+                const selectedText = document.querySelector('.people-selected-text');
+                const customField = document.querySelector('.custom-people-field');
+
+                if (value === 'custom') {
+                    customField.style.display = 'block';
+                    selectedText.innerHTML = 'Selected: <strong>custom</strong>';
+                    dropdown.value = 'custom';
+                } else {
+                    customField.style.display = 'none';
+                    selectedText.innerHTML = 'Selected: <strong>' + value + ' people</strong>';
+                    dropdown.value = value;
+                }
+            }
+        </script>
     </body>
     </html>
 </asp:Content>

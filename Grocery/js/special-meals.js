@@ -5,9 +5,17 @@ function escapeSpecialMealText(value) {
 function initSpecialMeals() {
     const user = getCurrentUser();
     const meals = getData('meals') || [];
-    const mealOpts = document.querySelector('#meal-options');
-    if (mealOpts) mealOpts.innerHTML = meals.map(meal => `<label class="card" style="display:flex;gap:10px;align-items:center;padding:12px"><input type="checkbox" value="${escapeSpecialMealText(meal.name)}"> <span><strong>${escapeSpecialMealText(meal.name)}</strong><small class="muted" style="display:block">${escapeSpecialMealText(meal.type)} · ${escapeSpecialMealText(meal.cookingTime)}</small></span></label>`).join('');
+    const mealOptionsHtml = meals.map(meal => `
+    <div class="meal-option-wrapper">
+        <label class="meal-option-card">
+            <input type="radio" name="selectedMeal" value="${meal.id}">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="meal-option-text">${meal.name}</span>
+        </label>
+    </div>
+`).join('');
 
+    document.getElementById('meal-options').innerHTML = mealOptionsHtml;
     const peopleInput = document.querySelector('#people');
     const customPeopleInput = document.querySelector('#custom-people, #custom_people, #people-custom');
     if (customPeopleInput) customPeopleInput.style.display = 'none';
