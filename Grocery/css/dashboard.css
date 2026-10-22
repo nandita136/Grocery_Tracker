@@ -1011,4 +1011,291 @@
         grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
+/* ========================================
+   MODERN PROFILE PAGE DESIGN
+======================================== */
 
+/* Profile Header Card */
+.profile-header-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--green), #10b981);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    position: relative;
+}
+
+    .profile-avatar-large .camera-icon {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 28px;
+        height: 28px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green);
+        font-size: 0.8rem;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+.profile-info-header {
+    flex: 1;
+}
+
+    .profile-info-header h2 {
+        font-family: Quicksand, sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0 0 6px 0;
+    }
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.btn-edit-profile {
+    background: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+    .btn-edit-profile:hover {
+        background: var(--green);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+/* Personal Information Section */
+.personal-info-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+    .personal-info-card h3 {
+        font-family: Quicksand, sans-serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0 0 24px 0;
+    }
+
+.info-item {
+    background: #f9fbf9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-item:hover {
+        border-color: var(--green);
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(31, 93, 58, 0.05);
+    }
+
+    .info-item i {
+        width: 40px;
+        height: 40px;
+        background: #dcfce7;
+        color: var(--green);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+.info-item-content {
+    flex: 1;
+}
+
+.info-item-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.info-item-value {
+    font-size: 1.05rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+/* Stats Grid */
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.stat-card-modern {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+    .stat-card-modern:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(31, 93, 58, 0.08);
+        border-color: var(--green);
+    }
+
+    .stat-card-modern strong {
+        display: block;
+        font-family: Quicksand, sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--green);
+        margin-bottom: 4px;
+    }
+
+    .stat-card-modern .muted {
+        font-size: 0.9rem;
+        color: var(--muted);
+        font-weight: 600;
+    }
+
+/* Edit Mode Inputs */
+#profile-edit .form-group {
+    margin-bottom: 20px;
+}
+
+    #profile-edit .form-group label {
+        display: block;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    #profile-edit .form-group input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        background: #fff;
+        color: var(--text);
+        outline: none;
+        transition: all 0.2s ease;
+    }
+
+        #profile-edit .form-group input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(59, 143, 90, 0.1);
+        }
+
+/* Password Section */
+#password-form {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+    #password-form .eyebrow {
+        color: var(--green);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+
+    #password-form h2 {
+        font-family: Quicksand, sans-serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0 0 24px 0;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info-header {
+        text-align: center;
+    }
+
+    .btn-edit-profile {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        .info-item i {
+            margin: 0 auto;
+        }
+}
