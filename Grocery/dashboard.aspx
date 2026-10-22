@@ -131,24 +131,54 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inline">
-                        <h2>Weekly meal summary</h2>
-                        <a class="btn btn-secondary" href="meal-planner.aspx">Edit plan</a></div>
-                    <div id="week-grid" class="week-grid"></div>
-                    <h2 style="margin-top: 30px">Quick actions</h2>
-                    <div class="quick-grid"><a class="card quick-card" href="meal-planner.aspx"><i class="fa-solid fa-calendar-days"></i>
-                        <h3>Meal Planner</h3>
-                        <p class="muted small">Plan your week</p>
-                    </a><a class="card quick-card" href="grocery-suggestions.aspx"><i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <h3>Suggestions</h3>
-                        <p class="muted small">Generate ingredients</p>
-                    </a><a class="card quick-card" href="grocery-list.aspx"><i class="fa-solid fa-basket-shopping"></i>
-                        <h3>Grocery List</h3>
-                        <p class="muted small">Manage your shopping</p>
-                    </a><a class="card quick-card" href="special-meals.aspx"><i class="fa-solid fa-cake-candles"></i>
-                        <h3>Special Meals</h3>
-                        <p class="muted small">Plan an occasion</p>
-                    </a></div>
+                   <!-- Weekly Meal Summary Section -->
+                    <div style="background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 30px; border: 1px solid var(--border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h2 style="font-family: Quicksand, sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--dark); margin: 0;">Weekly Meal Summary</h2>
+                            <a href="meal-planner.aspx" style="color: var(--green); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                                View Planner <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i>
+                            </a>
+                        </div>
+                        <div id="week-summary-container" class="week-summary-grid">
+                            <!-- Weekly meal cards will be injected here -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Section -->
+                    <h2 style="margin-top: 30px; font-family: Quicksand, sans-serif; color: var(--dark);">Quick actions</h2>
+                    <div class="quick-grid">
+                        <a class="quick-card-modern" href="meal-planner.aspx">
+                            <div class="quick-card-icon" style="background: #f0fdf4;">
+                                <i class="fa-solid fa-calendar-days" style="color: #16a34a;"></i>
+                            </div>
+                            <h3 style="font-family: Quicksand, sans-serif; font-size: 1rem; font-weight: 800; color: var(--dark); margin: 12px 0 4px 0;">Meal Planner</h3>
+                            <p class="muted small" style="margin: 0; font-size: 0.85rem;">Plan your week</p>
+                        </a>
+    
+                        <a class="quick-card-modern" href="grocery-suggestions.aspx">
+                            <div class="quick-card-icon" style="background: #f0fdf4;">
+                                <i class="fa-solid fa-wand-magic-sparkles" style="color: #16a34a;"></i>
+                            </div>
+                            <h3 style="font-family: Quicksand, sans-serif; font-size: 1rem; font-weight: 800; color: var(--dark); margin: 12px 0 4px 0;">Suggestions</h3>
+                            <p class="muted small" style="margin: 0; font-size: 0.85rem;">Generate ingredients</p>
+                        </a>
+    
+                        <a class="quick-card-modern" href="grocery-list.aspx">
+                            <div class="quick-card-icon" style="background: #f0fdf4;">
+                                <i class="fa-solid fa-basket-shopping" style="color: #16a34a;"></i>
+                            </div>
+                            <h3 style="font-family: Quicksand, sans-serif; font-size: 1rem; font-weight: 800; color: var(--dark); margin: 12px 0 4px 0;">Grocery List</h3>
+                            <p class="muted small" style="margin: 0; font-size: 0.85rem;">Manage your shopping</p>
+                        </a>
+    
+                        <a class="quick-card-modern" href="special-meals.aspx">
+                            <div class="quick-card-icon" style="background: #f0fdf4;">
+                                <i class="fa-solid fa-cake-candles" style="color: #16a34a;"></i>
+                            </div>
+                            <h3 style="font-family: Quicksand, sans-serif; font-size: 1rem; font-weight: 800; color: var(--dark); margin: 12px 0 4px 0;">Special Meals</h3>
+                            <p class="muted small" style="margin: 0; font-size: 0.85rem;">Plan an occasion</p>
+                        </a>
+                    </div>
                 </section>
             </main>
         </div>
