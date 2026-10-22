@@ -104,7 +104,7 @@
         <div class="app-shell">
             <main class="main-area">
                 <header class="topbar">
-                    <h1>Grocery List</h1>
+                    <h1>Grocery list</h1>
                     <div class="profile-chip"><span data-user-name>User</span><span class="avatar"><i class="fa-solid fa-user"></i></span></div>
                 </header>
                 <section class="content">
