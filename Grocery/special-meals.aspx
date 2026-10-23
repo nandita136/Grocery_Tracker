@@ -2,8 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        #btnRequestMeal { background: var(--green) !important; color: #fff !important; border: 1px solid var(--green) !important; opacity: 1; }
-        #btnRequestMeal:hover { background: var(--dark) !important; color: #fff !important; border-color: var(--dark) !important; }
+        #btnRequestMeal {
+            background: var(--green) !important;
+            color: #fff !important;
+            border: 1px solid var(--green) !important;
+            opacity: 1;
+        }
+
+            #btnRequestMeal:hover {
+                background: var(--dark) !important;
+                color: #fff !important;
+                border-color: var(--dark) !important;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -137,7 +147,7 @@
                                 <asp:ListItem>20</asp:ListItem>
                                 <asp:ListItem Value="custom">Custom</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:TextBox ID="custom_people" runat="server" TextMode="Number" placeholder="Number" ClientIDMode="Static" style="display: none; margin-top: 8px; width: 100%; padding: 9px; border: 1px solid #cfe1d5; border-radius: 8px"></asp:TextBox>
+                            <asp:TextBox ID="custom_people" runat="server" TextMode="Number" placeholder="Number" ClientIDMode="Static" Style="display: none; margin-top: 8px; width: 100%; padding: 9px; border: 1px solid #cfe1d5; border-radius: 8px"></asp:TextBox>
                         </div>
                         <asp:Button ID="generate_special" runat="server" Text="Generate Grocery List" CssClass="btn btn-primary" Style="margin-top: 20px" ClientIDMode="Static" OnClientClick="return false;" />
                     </div>
@@ -168,7 +178,7 @@
                                     <asp:ListItem>20</asp:ListItem>
                                     <asp:ListItem Value="custom">Custom</asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:TextBox ID="request_custom_people" runat="server" TextMode="Number" placeholder="Number" ClientIDMode="Static" style="display: none; margin-top: 8px; width: 100%; padding: 9px; border: 1px solid #cfe1d5; border-radius: 8px"></asp:TextBox>
+                                <asp:TextBox ID="request_custom_people" runat="server" TextMode="Number" placeholder="Enter number of people" ClientIDMode="Static" Style="display: block; margin-top: 8px; width: 100%; padding: 9px; border: 1px solid #cfe1d5; border-radius: 8px"></asp:TextBox>                                                                                                     
                             </div>
                             <asp:TextBox ID="meal_request" runat="server" placeholder="Enter meal or dish name" ClientIDMode="Static"></asp:TextBox>
                             <asp:Button ID="btnRequestMeal" runat="server" Text="Request" CssClass="btn btn-primary" ClientIDMode="Static" OnClientClick="return false;" />
