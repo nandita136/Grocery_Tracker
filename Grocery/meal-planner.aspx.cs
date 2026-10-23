@@ -117,26 +117,26 @@ namespace Grocery
 
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(DropDownList1.SelectedValue))
-            {
-                TextBox1.Text = DropDownList1.SelectedValue;
-            }
-        }
+        //protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(DropDownList1.SelectedValue))
+        //    {
+        //        TextBox1.Text = DropDownList1.SelectedValue;
+        //    }
+        //}
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             int people = 2;
 
-            if (!string.IsNullOrEmpty(TextBox1.Text) && int.TryParse(TextBox1.Text, out int customPeople) && customPeople > 0)
-            {
-                people = customPeople;
-            }
-            else if (!string.IsNullOrEmpty(DropDownList1.SelectedValue) && int.TryParse(DropDownList1.SelectedValue, out int selectedPeople) && selectedPeople > 0)
-            {
-                people = selectedPeople;
-            }
+            //if (!string.IsNullOrEmpty(TextBox1.Text) && int.TryParse(TextBox1.Text, out int customPeople) && customPeople > 0)
+            //{
+            //    people = customPeople;
+            //}
+            //else if (!string.IsNullOrEmpty(DropDownList1.SelectedValue) && int.TryParse(DropDownList1.SelectedValue, out int selectedPeople) && selectedPeople > 0)
+            //{
+            //    people = selectedPeople;
+            //}
 
             var dayMealMap = new Dictionary<string, Dictionary<string, string>>
             {
