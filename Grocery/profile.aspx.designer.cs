@@ -15,15 +15,6 @@ namespace Grocery
     {
 
         /// <summary>
-        /// lblEditName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEditName;
-
-        /// <summary>
         /// txtEditName control.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace Grocery
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEditName;
-
-        /// <summary>
-        /// lblEditEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEditEmail;
 
         /// <summary>
         /// txtEditEmail control.
@@ -51,22 +33,13 @@ namespace Grocery
         protected global::System.Web.UI.WebControls.TextBox txtEditEmail;
 
         /// <summary>
-        /// btnSaveProfile control.
+        /// txtEditMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveProfile;
-
-        /// <summary>
-        /// btnCancelEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelEdit;
+        protected global::System.Web.UI.WebControls.TextBox txtEditMobile;
 
         /// <summary>
         /// lblCurrentPassword control.

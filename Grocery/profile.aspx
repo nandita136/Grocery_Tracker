@@ -100,49 +100,113 @@
                     <div class="profile-chip"><span data-user-name>User</span><span class="avatar"><i class="fa-solid fa-user"></i></span></div>
                 </header>
                 <section class="content">
-                    <div class="split-grid">
-                        <div class="card">
-                            <p class="eyebrow">Account information</p>
-                            <div id="profile-view">
-                                <h2 id="profile-name"></h2>
-                                <p id="profile-email" class="muted"></p>
+                    <!-- Profile Header Card -->
+                    <div class="profile-header-card">
+                        <div class="profile-avatar-large">
+                            <span id="profile-initials">PC</span>
+                            <div class="camera-icon">
+                                <i class="fa-solid fa-camera"></i>
                             </div>
-                            <div id="profile-edit" style="display: none; margin-top: 15px">
-                                <div class="form-group">
-                                    <asp:Label ID="lblEditName" runat="server" Text="Name" AssociatedControlID="txtEditName"></asp:Label>
-                                    <asp:TextBox ID="txtEditName" runat="server" ClientIDMode="Static"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="lblEditEmail" runat="server" Text="Email" AssociatedControlID="txtEditEmail"></asp:Label>
-                                    <asp:TextBox ID="txtEditEmail" runat="server" ClientIDMode="Static"></asp:TextBox>
-                                </div>
-                                <div class="actions" style="display: flex; gap: 10px; margin-top: 15px">
-                                    <asp:Button ID="btnSaveProfile" runat="server" Text="Save Changes" CssClass="btn btn-primary" ClientIDMode="Static" UseSubmitBehavior="false" OnClientClick="saveProfile(event); return false;" />
-                                    <asp:Button ID="btnCancelEdit" runat="server" Text="Cancel" CssClass="btn btn-secondary" ClientIDMode="Static" UseSubmitBehavior="false" OnClientClick="cancelEditProfile(event); return false;" />
-                                </div>
-                            </div>
-                            <div id="profile-stats" class="stat-grid" style="margin-top: 25px"></div>
                         </div>
-                        <div id="password-form" class="card">
-                            <p class="eyebrow">Security</p>
-                            <h2>Change password</h2>
+                        <div class="profile-info-header">
+                            <h2 id="profile-name">Priyesha Chauhan</h2>
+                            <div class="status-badge">Active</div>
+                        </div>
+                        <button id="btnEditProfile" class="btn-edit-profile" onclick="startEditProfile(event); return false;">
+                            <i class="fa-solid fa-pen"></i> Edit Profile
+                        </button>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="personal-info-card">
+                        <h3>Personal Information</h3>
+        
+                        <!-- View Mode -->
+                        <div id="profile-view">
+                            <div class="info-item">
+                                <i class="fa-regular fa-user"></i>
+                                <div class="info-item-content">
+                                    <div class="info-item-label">Full Name</div>
+                                    <div class="info-item-value" id="profile-name-display">Priyesha Chauhan</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div class="info-item-content">
+                                    <div class="info-item-label">Email Address</div>
+                                    <div class="info-item-value" id="profile-email-display">priyesha@example.com</div>
+                                </div>
+                            </div>
+                           <div class="info-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div class="info-item-content">
+                                    <div class="info-item-label">Mobile Number</div>
+                                    <div class="info-item-value" id="profile-mobile-display">+91 98765 43210</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Mode -->
+                        <div id="profile-edit" style="display: none;">
                             <div class="form-group">
-                                <asp:Label ID="lblCurrentPassword" runat="server" Text="Current Password"></asp:Label>
-                                <asp:TextBox ID="txtCurrentPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                <label>Full Name</label>
+                                <asp:TextBox ID="txtEditName" runat="server" ClientIDMode="Static" placeholder="Enter your full name"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:Label ID="lblNewPassword" runat="server" Text="New Password"></asp:Label>
-                                <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                <label>Email Address</label>
+                                <asp:TextBox ID="txtEditEmail" runat="server" ClientIDMode="Static" TextMode="Email" placeholder="Enter your email"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm New Password"></asp:Label>
-                                <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                <label>Mobile Number</label>
+                                <asp:TextBox ID="txtEditMobile" runat="server" ClientIDMode="Static" placeholder="+91 98765 43210"></asp:TextBox>
                             </div>
-                            <asp:Button ID="btnUpdatePassword" runat="server" Text="Update Password" CssClass="btn btn-primary" OnClick="btnUpdatePassword_Click" />
+                            <div class="actions" style="display: flex; gap: 12px; margin-top: 20px;">
+                                <button type="button" class="btn btn-primary" onclick="saveProfile(event); return false;">
+                                    <i class="fa-solid fa-check"></i> Save Changes
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="cancelEditProfile(event); return false;">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="profile-stats-grid" id="profile-stats">
+                            <div class="stat-card-modern">
+                                <strong>1</strong>
+                                <span class="muted">Meal plans</span>
+                            </div>
+                            <div class="stat-card-modern">
+                                <strong>0</strong>
+                                <span class="muted">Grocery items</span>
+                            </div>
+                            <div class="stat-card-modern">
+                                <strong>3</strong>
+                                <span class="muted">Special requests</span>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Password Section -->
+                    <div id="password-form" class="card">
+                        <p class="eyebrow">Security</p>
+                        <h2>Change password</h2>
+                        <div class="form-group">
+                            <asp:Label ID="lblCurrentPassword" runat="server" Text="Current Password"></asp:Label>
+                            <asp:TextBox ID="txtCurrentPassword" runat="server" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblNewPassword" runat="server" Text="New Password"></asp:Label>
+                            <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm New Password"></asp:Label>
+                            <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <asp:Button ID="btnUpdatePassword" runat="server" Text="Update Password" CssClass="btn btn-primary" OnClick="btnUpdatePassword_Click" />
+                    </div>
                 </section>
-            </main>
+           </main>
         </div>
         <div class="toast-wrap"></div>
         <script src="js/storage.js"></script>
