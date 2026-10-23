@@ -107,11 +107,11 @@
                             <h1>Weekly Meal Planner</h1>
                             <p id="week-range">August 2026 · Week 1</p>
                         </div>
-                        <asp:Button ID="btnGenerateGrocery" runat="server" Text="Generate Grocery List" 
-                            CssClass="btn-generate" OnClientClick="return false;" />
+                        <asp:Button ID="btnGenerateGrocery" runat="server" Text="Generate Grocery List"
+                            CssClass="btn-generate" PostBackUrl="~/grocery-suggestions.aspx" />
                     </div>
 
-                   <div class="people-selector-card">
+                    <div class="people-selector-card">
                         <div class="people-label">
                             <i class="fa-solid fa-users"></i>
                             <span>Number of People</span>
@@ -350,44 +350,44 @@
         <script src="js/meal-planner.js"></script>
         <script>protectUserPage(); setupAppShell(false, 'Meal Planner'); initMealPlanner();</script>
 
-       <script>
-           function selectPeople(count, clickedBtn) {
-               // Remove active class from all buttons
-               document.querySelectorAll('.people-btn').forEach(btn => {
-                   btn.classList.remove('active');
-               });
+        <script>
+            function selectPeople(count, clickedBtn) {
+                // Remove active class from all buttons
+                document.querySelectorAll('.people-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
 
-               // Add active class to clicked button
-               if (clickedBtn) {
-                   clickedBtn.classList.add('active');
-               }
+                // Add active class to clicked button
+                if (clickedBtn) {
+                    clickedBtn.classList.add('active');
+                }
 
-               const customInput = document.getElementById('custom-people-input');
-               const countText = document.getElementById('people-count');
+                const customInput = document.getElementById('custom-people-input');
+                const countText = document.getElementById('people-count');
 
-               if (count === 'custom') {
-                   // Show the custom input field
-                   customInput.style.display = 'block';
-                   customInput.focus();
-                   countText.textContent = 'custom';
+                if (count === 'custom') {
+                    // Show the custom input field
+                    customInput.style.display = 'block';
+                    customInput.focus();
+                    countText.textContent = 'custom';
 
-                   // Update count when user types in the custom input
-                   customInput.oninput = function () {
-                       const value = this.value;
-                       if (value && parseInt(value) > 0) {
-                           countText.textContent = value + ' people';
-                       } else {
-                           countText.textContent = 'custom';
-                       }
-                   };
-               } else {
-                   // Hide the custom input field
-                   customInput.style.display = 'none';
-                   customInput.value = '';
-                   countText.textContent = count + ' people';
-               }
-           }
-       </script>
+                    // Update count when user types in the custom input
+                    customInput.oninput = function () {
+                        const value = this.value;
+                        if (value && parseInt(value) > 0) {
+                            countText.textContent = value + ' people';
+                        } else {
+                            countText.textContent = 'custom';
+                        }
+                    };
+                } else {
+                    // Hide the custom input field
+                    customInput.style.display = 'none';
+                    customInput.value = '';
+                    countText.textContent = count + ' people';
+                }
+            }
+        </script>
     </body>
     </html>
 </asp:Content>
