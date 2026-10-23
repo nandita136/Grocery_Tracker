@@ -30,12 +30,13 @@ function initAdminRequests() {
             let reasonHtml = '';
 
             if (item.status === 'Pending') {
+                // FIXED: Added type="button" and event parameter to prevent accidental form submission
                 actionsHtml = `
                     <div class="admin-card-actions">
-                        <button class="btn btn-secondary" onclick="updateRequest('${item.id}', 'Accepted')">
+                        <button type="button" class="btn btn-secondary" onclick="updateRequest('${item.id}', 'Accepted', event); return false;">
                             <i class="fa-solid fa-check"></i> Accept
                         </button>
-                        <button class="btn btn-danger" onclick="rejectRequest('${item.id}')">
+                        <button type="button" class="btn btn-danger" onclick="rejectRequest('${item.id}', event); return false;">
                             <i class="fa-solid fa-xmark"></i> Reject
                         </button>
                     </div>
@@ -78,46 +79,86 @@ function initAdminRequests() {
         }).join('');
     };
 
-    window.updateRequest = (id, status) => {
+    // FIXED: Added event parameter and preventDefault
+    window.updateRequest = (id, status, event) => {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
         if (status !== 'Accepted') return;
         const requests = getData('specialMealRequests') || [];
         const request = requests.find(item => item.id == id && item.status === 'Pending');
         if (!request) return;
+
         Object.assign(request, { status, rejectionReason: '' });
         saveData('specialMealRequests', requests);
         showToast('Request accepted!');
         render();
     };
 
-    window.rejectRequest = id => {
+    // FIXED: Complete rewrite to prevent instant closing and ensure proper modal handling
+    window.rejectRequest = (id, event) => {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
         const requests = getData('specialMealRequests') || [];
         const pending = requests.some(item => item.id == id && item.status === 'Pending');
-        if (!pending) return;
+        if (!pending) {
+            showToast('Request is not pending!', 'warning');
+            return;
+        }
 
+        // Show modal with a unique form ID based on the request ID
         showModal('Reason for rejection', `
-            <form id="reject-form">
+            <form id="reject-form-${id}">
                 <div class="form-group">
-                    <label>Reason</label>
-                    <textarea name="reason" required style="width: 100%; padding: 10px; border: 1px solid #cfe1d5; border-radius: 8px; min-height: 80px;"></textarea>
+                    <label>Please provide a reason for rejection:</label>
+                    <textarea name="reason" required placeholder="e.g., The requested menu is unavailable for this date." 
+                        style="width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 10px; min-height: 100px; font-family: inherit; font-size: 0.95rem; outline: none;"></textarea>
                 </div>
-                <button class="btn btn-danger" style="width: 100%; margin-top: 12px;">Reject Request</button>
+                <div style="display: flex; gap: 12px; margin-top: 16px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()" style="flex: 1;">Cancel</button>
+                    <button type="submit" class="btn btn-danger" style="flex: 1;">Reject Request</button>
+                </div>
             </form>
         `);
 
-        document.querySelector('#reject-form').onsubmit = event => {
-            event.preventDefault();
-            const reqs = getData('specialMealRequests') || [];
-            const req = reqs.find(item => item.id == id && item.status === 'Pending');
-            if (!req) return;
-            Object.assign(req, {
-                status: 'Rejected',
-                rejectionReason: new FormData(event.target).get('reason')
-            });
-            saveData('specialMealRequests', reqs);
-            closeModal();
-            showToast('Request rejected!', 'warning');
-            render();
-        };
+        // Wait a tiny bit for the modal to render in the DOM, then attach the submit handler
+        setTimeout(() => {
+            const form = document.querySelector(`#reject-form-${id}`);
+            if (form) {
+                form.onsubmit = (submitEvent) => {
+                    submitEvent.preventDefault();
+                    submitEvent.stopPropagation();
+
+                    const reason = new FormData(form).get('reason');
+                    if (!reason || reason.trim() === '') {
+                        showToast('Please enter a rejection reason.', 'error');
+                        return;
+                    }
+
+                    const reqs = getData('specialMealRequests') || [];
+                    const req = reqs.find(item => item.id == id && item.status === 'Pending');
+                    if (!req) {
+                        showToast('Request not found!', 'error');
+                        return;
+                    }
+
+                    Object.assign(req, {
+                        status: 'Rejected',
+                        rejectionReason: reason.trim()
+                    });
+
+                    saveData('specialMealRequests', reqs);
+                    closeModal();
+                    showToast('Request rejected!', 'warning');
+                    render();
+                };
+            }
+        }, 100);
     };
 
     document.querySelector('#request-filter').onchange = render;
